@@ -250,6 +250,7 @@ mod tests {
     fn irc_message_serde() {
         let input = ":test!test@test PRIVMSG #museun :this is a test\r\n";
         crate::serde::round_trip_json::<IrcMessage>(input);
+        crate::serde::round_trip_rmp::<IrcMessage>(input);
     }
 
     #[test]
